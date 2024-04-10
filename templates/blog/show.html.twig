@@ -1,0 +1,17 @@
+{% extends 'base.html.twig'%}
+{% block body %}
+
+<section class="articles">
+    <article>
+        <h2>{{article.title}}</h2>
+        <div class="metadata">Ecrit le {{article.createdAT | date('d/m/Y')}} à {{article.createdAT | date('H:i')}} dans la catégorie Sport</div>
+        <div class="content">
+            <img src="{{article.image}}" alt="">
+            <p>{{article.content}}</p>
+        </div>
+        <hr>
+        <p>Blabla plus detaillé , avec toujours lorem qui fonctionne pas ...</p>
+    </article>
+</section>
+
+{%endblock%}
