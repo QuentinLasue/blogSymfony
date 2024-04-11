@@ -4,13 +4,30 @@
 <section class="articles">
     <article>
         <h2>{{article.title}}</h2>
-        <div class="metadata">Ecrit le {{article.createdAT | date('d/m/Y')}} à {{article.createdAT | date('H:i')}} dans la catégorie Sport</div>
+        <a href="{{url('blog_edit',{'id':article.id})}}" class="btn btn-success">Modifier</a>
+        <div class="metadata">
+            Ecrit le {{article.createdAT | date('d/m/Y')}} à {{article.createdAT | date('H:i')}} dans la catégorie Sport
+        </div>
         <div class="content">
             <img src="{{article.image}}" alt="">
             <p>{{article.content}}</p>
         </div>
         <hr>
-        <p>Blabla plus detaillé , avec toujours lorem qui fonctionne pas ...</p>
+        <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, praesentium iusto. Nesciunt reprehenderit earum ea, blanditiis fugiat libero sapiente laudantium omnis magnam fugit, perspiciatis dolorem architecto quos eius vitae similique?
+        Officia, quod. Dolorem tenetur corrupti, doloremque laudantium obcaecati commodi iusto. Tempora dolor voluptate vel assumenda cum delectus aliquam a nostrum unde ducimus accusamus ratione, nam nihil, voluptas facilis! Officiis, distinctio?
+        Corporis a ab temporibus incidunt totam eum et modi molestiae, fuga aliquid consectetur minima itaque asperiores quo repudiandae maiores nemo porro quasi in amet vitae ratione! Ducimus aspernatur harum alias.
+        </p>
+        <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, praesentium iusto. Nesciunt reprehenderit earum ea, blanditiis fugiat libero sapiente laudantium omnis magnam fugit, perspiciatis dolorem architecto quos eius vitae similique?
+        Officia, quod. Dolorem tenetur corrupti, doloremque laudantium obcaecati commodi iusto. Tempora dolor voluptate vel assumenda cum delectus aliquam a nostrum unde ducimus accusamus ratione, nam nihil, voluptas facilis! Officiis, distinctio?
+        Corporis a ab temporibus incidunt totam eum et modi molestiae, fuga aliquid consectetur minima itaque asperiores quo repudiandae maiores nemo porro quasi in amet vitae ratione! Ducimus aspernatur harum alias.
+        </p>
+        <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, praesentium iusto. Nesciunt reprehenderit earum ea, blanditiis fugiat libero sapiente laudantium omnis magnam fugit, perspiciatis dolorem architecto quos eius vitae similique?
+        Officia, quod. Dolorem tenetur corrupti, doloremque laudantium obcaecati commodi iusto. Tempora dolor voluptate vel assumenda cum delectus aliquam a nostrum unde ducimus accusamus ratione, nam nihil, voluptas facilis! Officiis, distinctio?
+        Corporis a ab temporibus incidunt totam eum et modi molestiae, fuga aliquid consectetur minima itaque asperiores quo repudiandae maiores nemo porro quasi in amet vitae ratione! Ducimus aspernatur harum alias.
+        </p>
     </article>
 </section>
 

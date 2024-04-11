@@ -4,14 +4,15 @@
 
 {% block body %}
 {% for article in articles %}
-    <section class="articles">
+    <section class="articles text-center">
         <article>
             <h2>{{ article.title }}</h2>
             <div class="metadata">Ecrit le {{article.createdAt | date('d/m/Y' )}} à {{article.createdAt | date('H:i')}} dans la catégorie Sport</div>
             <div class="content">
                 <img src="{{article.image}}" alt="">
                 <p>{{ article.content}}</p>
-                    <a href="{{path('blog_show',{'id':article.id})}}" class="btn btn-primary">Lire la suite</a>
+                    <a href="{{url('blog_show',{'id':article.id})}}" class="btn btn-primary">Lire la suite</a>
+                    <a href="{{url('blog_edit',{'id':article.id})}}" class="btn btn-success">Modifier</a>
             </div>
         </article>
     </section>

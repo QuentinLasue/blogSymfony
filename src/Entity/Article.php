@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\ArticleRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
 class Article
@@ -15,12 +16,25 @@ class Article
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Length(
+        min: 10,
+        max: 255,
+        minMessage: 'Votre titre doit avoir {{ limit }} characteres au minimum',
+        maxMessage: 'Votre titre doit avoir {{ limit }} characteres au  maximun',
+
+    )]
     private ?string $title = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Length(
+        min: 10,
+        minMessage: 'Votre titre doit avoir {{ limit }} characteres au minimum'
+
+    )]
     private ?string $content = null;
 
-    #[ORM\Column(type:"text")]
+    #[ORM\Column(type: "text")]
+    #[Assert\Url]
     private ?string $image = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formArticle 'bootstrap_5_layout.html.twig' %}
+
+{% block body %}
+    <h1>Création d'un article :</h1>
+
+    {# form start et end pas obligatoire mais on préfére si on veut rajouter des éléments comme ici le button submit #}
+    {{ form_start(formArticle) }}
+    {# Form row permet de gérer les erreur  et de donner en deuxième attribut un tableau d'obtion, ici le  placeholder #}
+     {{ form_row(formArticle.title,{'attr':{'placeholder':"Titre de l'article"}})}}  
+    {{ form_row(formArticle.content,{'attr':{'placeholder':"Contenue de l'article"}})}}
+    {{ form_row(formArticle.image,{'attr':{'placeholder':"URL de l'image "}})}}
+
+    <button type="submit" class="btn btn-success">
+    {% if editMode %}
+    Modifier
+    {% else %}
+    Ajouter l'article
+    {% endif %}
+    </button>
+
+    {{form_end(formArticle)}} 
+
+    {# Si on veut pas mettre de style : #}
+    {# {{ form(formArticle) }} #}
+
+{% endblock %}
